@@ -9,6 +9,8 @@ print("TOTAL COMPREHENSION...")
 
 # TODO: write python code here
 
+for i in my_numbers:
+    print(i)
 
     
 print("--------------")
