@@ -51,7 +51,7 @@ sorted_products = sorted(products, key=sort_by_name)
 
 for x in sorted_products:
     price_usd = "${0:.2f}".format(x["price"])
-    print("+" + x["name"] + " (" + str(price_usd) +")")
+    print("+ " + x["name"] + " (" + str(price_usd) +")")
 
 
 # --------------
@@ -79,8 +79,26 @@ for x in sorted_products:
 #  + Sparkling Orange Juice & Prickly Pear Beverage ($2.99)
 
 
+# HEADER2
+departments = []
+for p in products:
+    if p["department"] not in departments:
+        departments.append(p["department"])
+
+unique_departments = list(set(departments))
 
 
+department_count = len(departments)
+print("--------------")
+print("THERE ARE", department_count,"DEPARTMENTS:")
+print("--------------")
+
+unique_departments.sort()
+
+for d in unique_departments:
+    dept_products = [p for p in products if p["department"] == d]
+    dept_products_count = len(dept_products)
+    print("+ " + d.title() + " (" + str(dept_products_count) + " products)")
 
 
 
