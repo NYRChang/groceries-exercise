@@ -98,7 +98,11 @@ unique_departments.sort()
 for d in unique_departments:
     dept_products = [p for p in products if p["department"] == d]
     dept_products_count = len(dept_products)
-    print("+ " + d.title() + " (" + str(dept_products_count) + " products)")
+    if dept_products_count > 1:
+        label = "products"
+    else:
+        label = "product"
+    print("+ " + d.title() + " (" + str(dept_products_count) + " " + label + ")")
 
 
 
